@@ -1,0 +1,175 @@
+{
+	"root": true,
+	"parser": "babel-eslint",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 6,
+		"sourceType": "module"
+	},
+
+	"plugins": [
+		"react",
+		"lodash",
+		"flowtype",
+		"jest"
+	],
+
+	"env": {
+		"browser": true, // override with `node` for Node linting
+		"es6": true
+	},
+
+	// plugin settings
+	"settings": {
+		"react": {
+			"version": "15.0"
+		},
+
+		"flowtype": {
+			"onlyFilesWithFlowAnnotation": true
+		}
+	},
+
+	"globals": {
+		"mina": false, // For Snap SVG
+		"DEVELOPMENT": false, // replaced by build scripts
+		"TESTING": false, // replaced by build scripts
+		"sinon": false
+	},
+
+	"rules": {
+		// Possible errors
+		"comma-dangle": [2, "never"],               // disallow trailing commas
+		"no-cond-assign": [2, "always"],            // disallow assignment in conditional expressions
+		"no-console": 2,                            // disallow use of console
+		"no-constant-condition": 2,                 // disallow use of constant expressions in conditions
+		"no-control-regex": 2,                      // disallow control characters in regular expressions
+		"no-debugger": 2,                           // disallow use of debugger
+		"no-dupe-args": 2,                          // disallow duplicate arguments in functions
+		"no-dupe-keys": 2,                          // disallow duplicate keys when creating object literals
+		"no-duplicate-case": 2,                     // disallow a duplicate case label
+		"no-empty": 2,                              // disallow empty statements
+		"no-empty-character-class": 2,              // disallow the use of empty character classes in regular expressions,
+		"no-ex-assign": 2,                          // disallow assigning to the exception in a catch block
+		"no-extra-boolean-cast": 2,                 // disallow double-negation boolean casts in a boolean context
+		"no-extra-semi": 2,                         // disallow unnecessary semicolons
+		"no-func-assign": 2,                        // disallow overwriting functions written as function declarations
+		"no-inner-declarations": 2,                 // disallow function or variable declarations in nested blocks,
+		"no-invalid-regexp": 2,                     // disallow invalid regular expression strings in the RegExp constructor,
+		"no-irregular-whitespace": 2,               // disallow irregular whitespace outside of strings and comments
+		"no-negated-in-lhs": 2,                     // disallow negation of the left operand of an in expression
+		"no-obj-calls": 2,                          // disallow the use of object properties of the global object (Math and JSON) as functions,
+		"no-regex-spaces": 2,                       // disallow multiple spaces in a regular expression literal
+		"no-sparse-arrays": 2,                      // disallow sparse arrays
+		"no-unexpected-multiline": 2,               // Avoid code that looks like two expressions but is actually one
+		"no-unreachable": 2,                        // disallow unreachable statements after a return, throw, continue, or break statement
+		"use-isnan": 2,                             // disallow comparisons with the value NaN
+		"valid-typeof": 2,                          // Ensure that the results of typeof are compared against a valid string,
+
+		// Best practices
+		"curly": [2, "multi-line"],                 // specify curly brace conventions for all control statements
+		"generator-star-spacing": [1, {             // specify function* syntax for generator functions
+			"before": false,
+			"after": true
+		}],
+		"eqeqeq": 2,                                // require the use of === and !==
+		"guard-for-in": 2,                          // make sure for-in loops have an if statement
+		"no-alert": 2,                              // disallow the use of alert, confirm, and prompt
+		"no-caller": 2,                             // disallow use of arguments.caller or arguments.callee
+		"no-labels": [2, {                          // disallow use of labels for anything other then loops and switches
+			"allowLoop": true,
+			"allowSwitch": true
+		}],
+		"no-eval": 2,                               // disallow use of eval()
+		"no-extend-native": 2,                      // disallow adding to native types
+		"no-extra-bind": 2,                         // disallow unnecessary function binding
+		"no-implied-eval": 2,                       // disallow use of eval()-like methods
+		"no-iterator": 2,                           // disallow usage of __iterator__ property
+		"no-lone-blocks": 2,                        // disallow unnecessary nested blocks
+		"no-loop-func": 2,                          // disallow creation of functions within loops
+		"no-multi-str": 2,                          // disallow use of multiline strings
+		"no-native-reassign": 2,                    // disallow reassignments of native objects
+		"no-new": 2,                                // disallow use of new operator when not part of the assignment or comparison
+		"no-new-func": 2,                           // disallow use of new operator for Function object
+		"no-new-wrappers": 2,                       // disallows creating new instances of String,Number, and Boolean
+		"no-octal": 2,                              // disallow use of octal literals
+		"no-octal-escape": 2,                       // disallow use of octal escape sequences in string literals, such as var foo = "Copyright \251";
+		"no-proto": 2,                              // disallow usage of __proto__ property
+		"no-redeclare": 2,                          // disallow declaring the same variable more then once
+		"no-return-assign": 2,                      // disallow use of assignment in return statement
+		"no-void": 2,                               // disallow use of void operator
+		"no-with": 2,                               // disallow use of the with statement
+		"radix": 2,                                 // require use of the second argument for parseInt()
+		"wrap-iife": [2, "inside"],                 // require immediate function invocation to be wrapped in parentheses,
+		"strict": [2, "never"],                     // controls location of Use Strict Directives
+		"no-delete-var": 2,                         // disallow deletion of variables
+		"no-shadow-restricted-names": 2,            // disallow shadowing of names such as arguments
+		"no-undef": 2,                              // disallow use of undeclared variables unless mentioned in a /*global */ block
+		"no-undef-init": 2,                         // disallow use of undefined when initializing variables
+		"no-unused-vars": [2, {                     // disallow declaration of variables that are not used in the code
+			"vars": "all",
+			"args": "none"
+		}],
+
+		// Style Enforcement
+		"indent": [1, "tab", { "SwitchCase" : 1 }],
+		"brace-style": [1, "1tbs"],
+		"comma-spacing": [1, { "before": false, "after": true }],
+		"comma-style": [1, "last"],
+		"key-spacing": [1, { "beforeColon": false, "afterColon": true }],
+		"new-cap": [1, { "newIsCap": true, "capIsNew": false }],
+		"no-array-constructor": 1,
+		"no-mixed-spaces-and-tabs": [1, "smart-tabs"],
+		"no-multiple-empty-lines": [1, { "max": 1 }],
+		"no-new-object": 1,
+		"no-spaced-func": 1,
+		"no-trailing-spaces": 1,
+		"one-var": [1, "never"],
+		"quotes": [1, "single"],
+		"semi": [1, "always"],
+		"keyword-spacing": [1, { "before": true, "after": true }],
+		"space-before-blocks": [1, "always"],
+		"space-before-function-paren": [1, "never"],
+		"space-infix-ops": 1,
+		"spaced-comment": [1, "always", { "exceptions": ["/"] }],
+
+		// ES6 rules
+		"arrow-parens": 1,                          // require parens in arrow function arguments
+		"arrow-spacing": [1, { "before": true, "after": true }], // require space before/after arrow function’s arrow
+		"constructor-super": 2,                     // ensure calling of super() in constructors
+		"no-class-assign": 2,                       // disallow modifying variables of class declarations
+		"no-const-assign": 2,                       // disallow modifying variables that are declared using const
+		"no-dupe-class-members": 2,                 // disallow duplicate name in class members
+		"no-new-symbol": 2,                         // disallow use of the new operator with the Symbol object
+		"no-this-before-super": 2,                  // disallow use of this/super before calling super() in constructors
+		"no-var": 2,                                // require let or const instead of var
+		// I would like to enable this ASAP
+		// "object-shorthand": 1,
+
+		// React rules
+		"jsx-quotes": [1, "prefer-single"],         // enforce the consistent use of either double or single quotes in JSX attributes
+		"react/jsx-no-duplicate-props": 1,          // disallow duplicate properties in JSX
+		"react/jsx-no-undef": 1,                    // disallow undeclared variables in JSX
+		"react/jsx-uses-react": 1,                  // prevent React from being incorrectly marked as unused
+		"react/jsx-uses-vars": 1,                   // prevent variables used in JSX from being incorrectly marked as unused
+		"react/jsx-wrap-multilines": 1,             // require parentheses around multiline JSX
+		"react/no-deprecated": 1,                   // disallow usage of deprecated methods
+		"react/no-did-mount-set-state": 1,          // disallow usage of setState in componentDidMount
+		"react/no-did-update-set-state": 1,         // disallow usage of setState in componentDidUpdate
+		"react/no-direct-mutation-state": 1,        // disallow direct mutation of this.state
+		"react/no-is-mounted": 1,                   // disallow usage of isMounted
+		"react/no-unknown-property": 1,             // disallow usage of unknown DOM properties
+		"react/prop-types": [1, { "ignore": ["children", "qa"] }], // require props validation in a React component definition
+		"react/self-closing-comp": [1, { "html": false }], // disallow extra closing tags for components without children
+
+		// Lodash rules
+		"lodash/callback-binding": 1,
+		"lodash/collection-method-value": 1,
+		"lodash/collection-return": 1,
+		"lodash/no-double-unwrap": 1,
+		"lodash/no-extra-args": 1,
+		"lodash/unwrap": 1,
+	}
+}
